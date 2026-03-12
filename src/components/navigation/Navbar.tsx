@@ -1,18 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import MobileMenu from "./MobileMenu";
-import HamburgerIcon from "../../assets/icons/Hamburger";
-import NavLogo from "../../assets/icons/NavLogo";
-import Button from "../Button";
-import { navLinks } from "./Navigation";
-
-const desktopLinkClass = "rounded text-sm text-neutral-600";
+import HamburgerIcon from "./icons/HamburgerIcon";
+import NavLogo from "./icons/NavLogo";
+import Button from "../ui/Button";
+import Link from "../ui/Link";
+import { navLinks } from "./navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = window.location.pathname;
 
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className='sticky top-0 z-50 w-full pt-4'>
+    <header
+      className={`sticky top-0 z-50 w-full px-4 transition-[background-color,backdrop-filter,box-shadow] duration-300 md:px-8 lg:px-0 ${
+        isScrolled ? "bg-white/80 shadow-sm backdrop-blur-md" : "bg-transparent"
+      }`}
+    >
       <nav
         className='mx-auto flex w-full max-w-304 items-center justify-between py-3 lg:gap-24'
         role='navigation'
@@ -23,46 +33,47 @@ export default function Navbar() {
         {/* Navigation desktop */}
         <div className='hidden items-center gap-8 lg:flex lg:pr-[205px]'>
           {navLinks.map(({ href, label }) => (
-            <Button
+            <Link
               key={href}
-              as='a'
               href={href}
-              label={label}
-              aria-label={`Go to ${label} page`}
+              variant='linkGray'
+              size='md-link'
               aria-current={pathname === href ? "page" : undefined}
-              classNames={`${desktopLinkClass} ${
-                pathname === href
-                  ? "text-neutral-900"
-                  : "text-neutral-600 hover:text-neutral-900 focus:text-neutral-900"
-              }`}
-            />
+              className={pathname === href ? "text-neutral-900" : ""}
+            >
+              {label}
+            </Link>
           ))}
         </div>
 
         {/* CTA buttons desktop */}
         <div className='hidden items-center gap-4 lg:flex'>
           <Button
-            label='Learn more'
-            classNames='cursor-pointer rounded border border-neutral-200 bg-white px-4 py-2.5 text-sm text-neutral-900 shadow-[0_1px_3px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)] hover:bg-neutral-50 focus:bg-neutral-200 focus:outline-none'
-            aria-label='Learn more'
-          />
+            variant='secondary'
+            size='md'
+          >
+            Learn more
+          </Button>
           <Button
-            label='See pricing'
-            classNames='cursor-pointer rounded bg-indigo-700 px-4 py-2.5 text-sm text-white shadow-[0_1px_3px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)] hover:bg-indigo-800 focus:outline-none'
-            aria-label='See pricing plans'
-          />
+            variant='primary'
+            size='md'
+          >
+            See pricing
+          </Button>
         </div>
 
         {/* Hamburger mobile/tablet */}
         <Button
-          classNames='cursor-pointer text-neutral-600 hover:text-gray-900 focus:outline-none lg:hidden'
-          icon={<HamburgerIcon className='cursor-pointer' />}
-          withText={false}
+          variant='linkGray'
+          size='icon-md'
           onClick={() => setIsOpen(!isOpen)}
           aria-controls='mobile-menu'
           aria-label='Toggle mobile menu'
           aria-expanded={isOpen}
-        />
+          className='lg:hidden'
+        >
+          <HamburgerIcon />
+        </Button>
 
         <MobileMenu
           isOpen={isOpen}

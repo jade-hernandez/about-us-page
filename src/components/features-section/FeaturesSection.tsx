@@ -3,7 +3,7 @@ import FeatureCard from "./FeatureCard";
 
 export default function FeaturesSection() {
   return (
-    <section className='mx-auto flex max-w-full flex-col gap-12 rounded-md bg-white px-3 py-12 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)] md:gap-16 md:px-4 md:py-16 lg:p-24'>
+    <section className='mx-auto flex max-w-full flex-col gap-12 rounded-md bg-white px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:p-24'>
       <div className='flex flex-col gap-5 text-center lg:mx-auto lg:max-w-4xl'>
         <div className='flex flex-col gap-3'>
           <span className='text-base font-semibold text-indigo-700'>Premium abstract images</span>

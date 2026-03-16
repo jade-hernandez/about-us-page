@@ -3,6 +3,7 @@ import Navbar from "./components/navigation/Navbar";
 import { PricingTiers } from "./components/pricing-tiers-section/PricingTiers";
 import FeaturesSection from "./components/features-section/FeaturesSection";
 import TestimonialsSection from "./components/testimonials-section/TestimonialsSection";
+import ContactSection from "./components/contact-section/ContactSection";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <FaqSection />
         <FeaturesSection />
         <TestimonialsSection />
+        <ContactSection />
       </main>
     </div>
   );

@@ -4,6 +4,7 @@ import { PricingTiers } from "./components/pricing-tiers-section/PricingTiers";
 import FeaturesSection from "./components/features-section/FeaturesSection";
 import TestimonialsSection from "./components/testimonials-section/TestimonialsSection";
 import ContactSection from "./components/contact-section/ContactSection";
+import FooterSection from "./components/footer-section/FooterSection";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <FeaturesSection />
         <TestimonialsSection />
         <ContactSection />
+        <FooterSection />
       </main>
     </div>
   );

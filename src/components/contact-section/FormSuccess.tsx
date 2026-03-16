@@ -1,5 +1,5 @@
 import { RiCheckFill } from "react-icons/ri";
-import Button from "./ui/Button";
+import Button from "../ui/Button";
 
 export default function FormSuccess({ onReset }: { onReset: () => void }) {
   return (

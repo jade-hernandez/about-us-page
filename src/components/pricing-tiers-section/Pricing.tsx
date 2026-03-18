@@ -1,5 +1,18 @@
 import { cva } from "class-variance-authority";
+
+import type { BillingCycle, Variant } from "./pricing-types";
+
 import { cn } from "../../utils/utils";
+
+type Currency = "$" | "€";
+
+export interface PricingProps extends React.HTMLAttributes<HTMLDivElement> {
+  price: string;
+  currency?: Currency;
+  billingCycle?: BillingCycle;
+  subText?: string;
+  variant?: Variant;
+}
 
 const pricingVariants = cva("", {
   variants: {
@@ -13,20 +26,7 @@ const pricingVariants = cva("", {
   }
 });
 
-export type TBillingCycle = "month" | "year";
-
-type TCurrency = "$" | "€";
-type TVariant = "default" | "highlighted";
-
-export interface IPricingProps extends React.HTMLAttributes<HTMLDivElement> {
-  price: string;
-  currency?: TCurrency;
-  billingCycle?: TBillingCycle;
-  subText?: string;
-  variant?: TVariant;
-}
-
-const Pricing = ({
+function Pricing({
   price,
   currency = "$",
   billingCycle = "month",
@@ -34,7 +34,7 @@ const Pricing = ({
   variant = "default",
   className,
   ...props
-}: IPricingProps) => {
+}: PricingProps) {
   const priceAsNumber = Number(price);
 
   const currencyMap = {
@@ -64,6 +64,6 @@ const Pricing = ({
       {subText && <span className='text-base text-neutral-600'>{subText}</span>}
     </div>
   );
-};
+}
 
 export { Pricing };

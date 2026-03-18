@@ -1,12 +1,12 @@
 import { cn } from "../../utils/utils";
 
-export interface ISegmentedControlProps {
+export interface SegmentedControlProps {
   options: string[];
   value: string;
   onChange: (value: string) => void;
 }
 
-const SegmentedControl: React.FC<ISegmentedControlProps> = ({ options, value, onChange }) => {
+function SegmentedControl({ options, value, onChange }: SegmentedControlProps) {
   return (
     <div className='inline-flex gap-8'>
       {options.map(option => (
@@ -27,6 +27,6 @@ const SegmentedControl: React.FC<ISegmentedControlProps> = ({ options, value, on
       ))}
     </div>
   );
-};
+}
 
 export default SegmentedControl;

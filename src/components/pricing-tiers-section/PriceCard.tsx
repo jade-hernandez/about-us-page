@@ -1,10 +1,21 @@
-import type { IPriceCardProps } from "./PricingTiers";
-import { cn } from "../../utils/utils";
-import { Pricing } from "./Pricing";
-import { FeatureList } from "./FeatureList";
 import Button from "../ui/Button";
 
-export const PriceCard = ({
+import type { BillingCycle, PricingPlan } from "./pricing-types";
+import { FeatureList } from "./FeatureList";
+import { Pricing } from "./Pricing";
+
+import { cn } from "../../utils/utils";
+
+export interface PriceCardProps extends Omit<
+  PricingPlan,
+  "monthlyPrice" | "annualPrice" | "annualTotal"
+> {
+  price: string;
+  subText: string;
+  billingCycle: BillingCycle;
+}
+
+function PriceCard({
   title,
   description,
   price,
@@ -15,7 +26,7 @@ export const PriceCard = ({
   variant = "default",
   buttonVariant = "primary",
   billingCycle
-}: IPriceCardProps) => {
+}: PriceCardProps) {
   return (
     <div
       className={cn(
@@ -34,14 +45,12 @@ export const PriceCard = ({
             <h2 className='text-2xl font-semibold'>{title}</h2>
             <p className='text-neutral-600'>{description}</p>
           </div>
-
           <Pricing
             price={price}
             subText={subText}
             variant={variant}
             billingCycle={billingCycle}
           />
-
           <FeatureList items={features} />
         </div>
         <Button
@@ -54,4 +63,6 @@ export const PriceCard = ({
       </div>
     </div>
   );
-};
+}
+
+export { PriceCard };

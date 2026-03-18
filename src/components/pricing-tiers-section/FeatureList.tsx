@@ -1,35 +1,27 @@
 import FeatureIcon from "./FeatureIcon";
-import { cn } from "../../utils/utils";
 
-export interface IFeatureListItemProps {
-  content: string;
-  className?: string;
-}
-
-export const FeatureListItem = ({ content, className }: IFeatureListItemProps) => {
+function FeatureListItem({ content }: { content: string }) {
   return (
-    <li className={cn("flex gap-3", className)}>
+    <li className='flex gap-3'>
       <div className='flex shrink-0 items-center justify-center'>
         <FeatureIcon />
       </div>
       <span className='text-neutral-600'>{content}</span>
     </li>
   );
-};
-
-export interface IFeatureListProps {
-  items: string[];
 }
 
-export const FeatureList = ({ items }: IFeatureListProps) => {
+function FeatureList({ items }: { items: string[] }) {
   return (
-    <ul className={cn("flex flex-col gap-5 md:min-h-45")}>
-      {items.map((item, index) => (
+    <ul className='flex flex-col gap-5 md:min-h-45'>
+      {items.map(item => (
         <FeatureListItem
-          key={index}
+          key={item}
           content={item}
         />
       ))}
     </ul>
   );
-};
+}
+
+export { FeatureList };

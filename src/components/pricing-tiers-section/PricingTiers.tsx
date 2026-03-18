@@ -1,71 +1,9 @@
 import { useState } from "react";
-import { basicFeatures, premiumFeatures, standardFeatures } from "./feature-data";
-import { PriceCard } from "./PriceCard";
+
 import SegmentedControl from "../ui/Switch";
-import type { TBillingCycle } from "./Pricing";
 
-export type TVariant = "default" | "highlighted";
-export type TButtonVariant =
-  | "primary"
-  | "secondary"
-  | "tertiary"
-  | "linkColor"
-  | "linkGray"
-  | "destructive";
-
-export interface IPricingPlan {
-  title: string;
-  description: string;
-  monthlyPrice: string;
-  annualPrice: string;
-  annualTotal: string;
-  features: string[];
-  isFeatured?: boolean;
-  headingText?: string;
-  variant?: TVariant;
-  buttonVariant?: TButtonVariant;
-}
-
-export interface IPriceCardProps extends Omit<
-  IPricingPlan,
-  "monthlyPrice" | "annualPrice" | "annualTotal"
-> {
-  price: string;
-  subText: string;
-  billingCycle: TBillingCycle;
-}
-
-const pricingPlans: IPricingPlan[] = [
-  {
-    title: "Basic Plan",
-    description: "Access to a curated selection of abstract images",
-    monthlyPrice: "9.99",
-    annualPrice: "6.99",
-    annualTotal: "84",
-    features: basicFeatures,
-    buttonVariant: "secondary"
-  },
-  {
-    title: "Standard Plan",
-    description: "Next-level Integrations, priced economically",
-    monthlyPrice: "19.99",
-    annualPrice: "15.99",
-    annualTotal: "192",
-    features: standardFeatures,
-    isFeatured: true,
-    headingText: "Most Popular",
-    variant: "highlighted"
-  },
-  {
-    title: "Premium Plan",
-    description: "Experience limitless living for power users",
-    monthlyPrice: "29.99",
-    annualPrice: "25.99",
-    annualTotal: "312",
-    features: premiumFeatures,
-    buttonVariant: "secondary"
-  }
-];
+import { PriceCard } from "./PriceCard";
+import pricingPlans from "./pricing-data";
 
 function PricingTiers() {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -93,9 +31,9 @@ function PricingTiers() {
       </div>
 
       <div className='flex w-full flex-col gap-6 md:gap-8 lg:flex-row'>
-        {pricingPlans.map((plan, index) => (
+        {pricingPlans.map(plan => (
           <PriceCard
-            key={index}
+            key={plan.title}
             {...plan}
             price={isAnnual ? plan.annualPrice : plan.monthlyPrice}
             subText={isAnnual ? `Billed annually ($${plan.annualTotal})` : "Billed monthly"}

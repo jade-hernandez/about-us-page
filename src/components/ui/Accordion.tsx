@@ -16,7 +16,7 @@ const AccordionTrigger = forwardRef<HTMLButtonElement, AccordionTriggerProps>(
     <Accordion.Header className='flex'>
       <Accordion.Trigger
         className={cn(
-          "group flex h-fit flex-1 cursor-pointer items-start justify-between bg-white text-start text-lg font-medium text-neutral-900 outline-none",
+          "group flex h-fit flex-1 cursor-pointer items-start justify-between gap-4 bg-white text-start text-lg font-medium text-neutral-900 outline-none",
           className
         )}
         {...props}
@@ -52,7 +52,7 @@ const AccordionContent = forwardRef<HTMLDivElement, AccordionContentProps>(
   ({ children, className, ...props }, forwardedRef) => (
     <Accordion.Content
       className={cn(
-        "data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown overflow-hidden bg-white text-base text-neutral-600",
+        "data-[state=open]:animate-slide-down data-[state=closed]:animate-slide-up overflow-hidden bg-white text-base text-neutral-600",
         className
       )}
       {...props}

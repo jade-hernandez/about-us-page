@@ -6,12 +6,18 @@ import faqContentData from "./faq-data";
 
 function FaqSection() {
   return (
-    <section className='mx-auto flex h-fit max-w-304 flex-col gap-12 px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:py-24'>
+    <section
+      aria-labelledby='faq-heading'
+      className='mx-auto flex h-fit max-w-304 flex-col gap-12 px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:py-24'
+    >
       <div className='flex flex-col items-center gap-5 text-center'>
-        <h1 className='text-3xl font-semibold text-neutral-900 md:text-5xl'>
+        <h2
+          id='faq-heading'
+          className='text-3xl font-semibold text-neutral-900 md:text-5xl'
+        >
           Frequently asked questions
-        </h1>
-        <span className='text-lg text-neutral-600 md:text-xl'>Choose any questions you need</span>
+        </h2>
+        <p className='text-lg text-neutral-600 md:text-xl'>Choose any questions you need</p>
       </div>
       <div className='flex flex-col'>
         {faqContentData.map((faqItem, index) => (
@@ -25,18 +31,18 @@ function FaqSection() {
         ))}
         <div className='mt-7 flex h-fit w-full flex-col items-center justify-between gap-4 rounded-lg border border-neutral-200 bg-white p-4 shadow-[0_4px_6px_rgba(0,0,0,0.1),0_2px_4px_rgba(0,0,0,0.06)] md:flex-row md:p-8'>
           <div className='flex flex-col gap-2'>
-            <h2 className='text-xl font-semibold text-pretty text-neutral-900'>
+            <h3 className='text-xl font-semibold text-pretty text-neutral-900'>
               Can&apos;t find the answer you&apos;re looking for?
-            </h2>
-            <p className='text-base font-normal text-neutral-600'>
-              Reach out to&nbsp;our{" "}
+            </h3>
+            <p className='text-base text-neutral-600'>
+              Reach out to our{" "}
               <Link
                 href='mailto:support@mail.com'
                 variant='linkColor'
                 size='md-link'
                 className='inline'
               >
-                customer&nbsp;support
+                customer support
               </Link>{" "}
               team.
             </p>

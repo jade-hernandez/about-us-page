@@ -1,13 +1,15 @@
-import type { TCardProps } from "./features-data";
+import type { FeatureCardProps } from "./features-data";
 
-export default function FeatureCard({ icon: Icon, title, content }: TCardProps) {
+function FeatureCard({ icon: Icon, title, content }: FeatureCardProps) {
   return (
-    <div className='mx-auto flex w-full max-w-md flex-col items-center justify-center gap-5 md:max-w-[calc(50%-16px)] lg:max-w-[384px]'>
-      <Icon />
+    <article className='mx-auto flex w-full max-w-md flex-col items-center justify-center gap-5 md:max-w-[calc(50%-16px)] lg:max-w-[384px]'>
+      <Icon aria-hidden='true' />
       <div className='flex flex-col gap-2 text-center'>
-        <span className='text-xl font-semibold text-neutral-900'>{title}</span>
+        <h3 className='text-xl font-semibold text-neutral-900'>{title}</h3>
         <p className='text-base text-neutral-600'>{content}</p>
       </div>
-    </div>
+    </article>
   );
 }
+
+export default FeatureCard;

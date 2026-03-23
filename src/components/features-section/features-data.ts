@@ -6,13 +6,15 @@ import DollarIcon from "./icons/DollarIcon";
 import PeopleIcon from "./icons/PeopleIcon";
 import LoopIcon from "./icons/LoopIcon";
 
-export type TCardProps = {
+export type FeatureCardData = {
   icon: ComponentType;
   title: string;
   content: string;
 };
 
-const cardsData: TCardProps[] = [
+export type FeatureCardProps = FeatureCardData;
+
+export const cardsData: FeatureCardData[] = [
   {
     icon: DownloadIcon,
     title: "Infinite Download",
@@ -47,5 +49,3 @@ const cardsData: TCardProps[] = [
     content: "Use as many as you want, from Dribbble presentations to PowerPoint presentations."
   }
 ];
-
-export default cardsData;

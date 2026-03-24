@@ -1,11 +1,13 @@
-type TTestimonialCard = {
+export type TestimonialCardData = {
   name: string;
   username: string;
   testimonial: string;
   imageUrl: string;
 };
 
-const testimonialsData: TTestimonialCard[] = [
+export type TestimonialCardProps = TestimonialCardData;
+
+export const testimonialsData: TestimonialCardData[] = [
   {
     name: "Sarah Dole",
     username: "@sarahdole",
@@ -70,5 +72,3 @@ const testimonialsData: TTestimonialCard[] = [
     imageUrl: "src/components/testimonials-section/images/profile-thumbnail_8.jpg"
   }
 ];
-
-export default testimonialsData;

@@ -30,16 +30,16 @@ function PriceCard({
   return (
     <div
       className={cn(
-        "relative flex w-full flex-col justify-between rounded-md border border-neutral-200 bg-white",
+        "relative flex w-full flex-col justify-between rounded-md border border-neutral-200 bg-white lg:max-w-[384px]",
         isFeatured ? "border-indigo-600 shadow-2xl" : "shadow-sm"
       )}
     >
       {isFeatured && headingText && (
-        <div className='mb-4 rounded-t-lg bg-indigo-50 py-4 text-center text-xl font-semibold text-indigo-700 shadow-[0_4px_4px_rgba(0,0,0,0.25)] md:mb-0'>
+        <div className='mb-4 rounded-t-lg bg-indigo-50 py-4 text-center text-xl font-semibold text-indigo-700 md:mb-0'>
           {headingText}
         </div>
       )}
-      <div className='flex h-full flex-col justify-center gap-8 p-4 md:p-8'>
+      <div className='flex h-full flex-col justify-between gap-8 p-4 md:p-8'>
         <div className='flex h-full flex-col gap-8'>
           <div className='flex flex-col gap-2'>
             <h2 className='text-2xl font-semibold'>{title}</h2>

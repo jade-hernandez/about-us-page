@@ -36,7 +36,7 @@ function PricingTiers() {
         />
       </div>
 
-      <div className='flex w-full flex-col gap-6 md:gap-8 lg:flex-row'>
+      <div className='flex w-full flex-col items-center gap-6 md:gap-8 lg:flex-row lg:items-stretch lg:justify-center'>
         {pricingPlans.map(plan => (
           <PriceCard
             key={plan.title}

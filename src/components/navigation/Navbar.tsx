@@ -27,7 +27,7 @@ function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full px-4 transition-[background-color,backdrop-filter,box-shadow] duration-300 md:px-8 lg:px-0",
+        "sticky top-0 z-50 w-full transition-[background-color,backdrop-filter,box-shadow] duration-300 md:px-8 lg:px-0",
         isScrolled ? "bg-white/80 shadow-sm backdrop-blur-md" : "bg-transparent"
       )}
     >
@@ -43,7 +43,7 @@ function Navbar() {
               key={href}
               href={href}
               variant='linkGray'
-              size='md-link'
+              size='lg-link'
               aria-current={pathname === href ? "page" : undefined}
               className={pathname === href ? "text-neutral-900" : ""}
             >

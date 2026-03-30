@@ -1,10 +1,10 @@
 function BrushIcon() {
   return (
     <svg
-      viewBox='0 0 54 54'
       xmlns='http://www.w3.org/2000/svg'
-      width={54}
-      height={54}
+      viewBox='0 0 54 54'
+      width={48}
+      height={48}
       fill='#4338CA'
     >
       <g filter='url(#filter0_dd_12_653)'>

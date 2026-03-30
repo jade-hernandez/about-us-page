@@ -39,7 +39,7 @@ function FaqSection() {
               <Link
                 href='mailto:support@mail.com'
                 variant='linkColor'
-                size='md-link'
+                size='lg-link'
                 className='inline'
               >
                 customer support

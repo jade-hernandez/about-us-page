@@ -105,7 +105,7 @@ function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   key={href}
                   href={href}
                   variant='linkGray'
-                  size='md-link'
+                  size='lg-link'
                   onClick={onClose}
                   aria-current={isActive ? "page" : undefined}
                   className={cn(

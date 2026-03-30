@@ -15,7 +15,7 @@ function App() {
       className='mx-auto flex min-h-dvh w-full min-w-dvw flex-col items-center bg-linear-to-r from-[#F9FAFB] to-[#D2D6DB] p-4'
     >
       <Navbar />
-      <div className='flex w-full flex-col rounded-md bg-white'>
+      <div className='mt-4 flex w-full flex-col rounded-md bg-white'>
         <main className='flex flex-col'>
           <PricingTiers />
           <FaqSection />

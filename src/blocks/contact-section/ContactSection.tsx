@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react";
 import { RiBuildingLine, RiMailLine, RiPhoneLine } from "react-icons/ri";
 
-import { Button } from "../ui/Button";
-import { Textarea } from "../ui/Textarea";
-import { Toast } from "../ui/Toast";
+import { Button } from "../../components/ui/Button";
+import { Textarea } from "../../components/ui/Textarea";
+import { Toast } from "../../components/ui/Toast";
 
 import { FormSuccess } from "./FormSuccess";
 import { useContactForm } from "./useContactForm";
@@ -50,7 +50,7 @@ function ContactSection() {
         </div>
       )}
       <section
-        className='flex w-full flex-col gap-16 rounded-md bg-white px-3 py-12 md:px-4 md:py-16 lg:flex-row lg:justify-center lg:p-24'
+        className='mx-auto flex max-w-304 flex-col gap-12 px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:px-0 lg:py-24'
         aria-labelledby='contact-heading'
       >
         <div className='flex max-w-304 flex-col gap-12 md:gap-16 lg:flex-row lg:gap-8'>
@@ -74,7 +74,7 @@ function ContactSection() {
                     key={label}
                     className='flex items-center gap-3'
                   >
-                    <div className='flex size-12 items-center justify-center rounded-full bg-white shadow-[0_1px_3px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)]'>
+                    <div className='flex size-12 items-center justify-center rounded-full shadow-[0_1px_3px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)]'>
                       <Icon className='size-6 text-indigo-700' />
                     </div>
                     {href ? (

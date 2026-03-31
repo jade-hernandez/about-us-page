@@ -11,9 +11,9 @@ export const buttonVariants = cva("flex items-center font-medium", {
         "disabled:cursor-not-allowed disabled:bg-neutral-100 disabled:fill-neutral-400 disabled:text-neutral-400"
       ],
       secondary: [
-        "border-[0.5px] border-neutral-200 bg-white fill-neutral-900 text-neutral-900 cursor-pointer",
+        "border border-neutral-200 bg-white fill-neutral-900 text-neutral-900 cursor-pointer",
         "shadow-[0_1px_3px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)]",
-        "hover:border hover:border-neutral-200 hover:bg-neutral-50",
+        "hover:border-neutral-200 hover:bg-neutral-50",
         "hover:shadow-[0_1px_3px_rgba(0,0,0,0.10),0_1px_2px_rgba(0,0,0,0.06)]",
         "focus:border focus:border-neutral-200 focus:bg-neutral-50",
         "focus:shadow-[0_0px_0px_4px_rgba(68,76,231,0.12)]",

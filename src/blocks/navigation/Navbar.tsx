@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import { Button } from "../ui/Button";
-import { Link } from "../ui/Link";
+import { Button } from "../../components/ui/Button";
+import { Link } from "../../components/ui/Link";
 
 import { HamburgerIcon } from "./icons/HamburgerIcon";
 import { NavLogo } from "./icons/NavLogo";

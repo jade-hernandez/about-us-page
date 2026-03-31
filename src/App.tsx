@@ -1,12 +1,11 @@
-import { Navbar } from "./components/navigation/Navbar";
+import { Navbar } from "./blocks/navigation/Navbar";
 
-import { PricingTiers } from "./components/pricing-tiers-section/PricingTiers";
-import { FaqSection } from "./components/pricing-faq-section/FaqSection";
-import { FeaturesSection } from "./components/features-section/FeaturesSection";
-import { TestimonialsSection } from "./components/testimonials-section/TestimonialsSection";
-import { ContactSection } from "./components/contact-section/ContactSection";
+import { FaqSection } from "./blocks/pricing-faq-section/FaqSection";
+import { FeaturesSection } from "./blocks/features-section/FeaturesSection";
+import { TestimonialsSection } from "./blocks/testimonials-section/TestimonialsSection";
+import { ContactSection } from "./blocks/contact-section/ContactSection";
 
-import { FooterSection } from "./components/footer-section/FooterSection";
+import { FooterSection } from "./blocks/footer/FooterSection";
 
 function App() {
   return (
@@ -17,10 +16,9 @@ function App() {
       <Navbar />
       <div className='mt-4 flex w-full flex-col rounded-md bg-white'>
         <main className='flex flex-col'>
-          <PricingTiers />
-          <FaqSection />
           <FeaturesSection />
           <TestimonialsSection />
+          <FaqSection />
           <ContactSection />
         </main>
         <FooterSection />
@@ -29,4 +27,4 @@ function App() {
   );
 }
 
-export default App;
+export { App };

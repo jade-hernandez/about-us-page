@@ -1,5 +1,5 @@
-import { Button } from "../ui/Button";
-import { Link } from "../ui/Link";
+import { Button } from "../../components/ui/Button";
+import { Link } from "../../components/ui/Link";
 
 import { FaqItem } from "./FaqItem";
 import { faqContentData } from "./faq-data";
@@ -8,7 +8,7 @@ function FaqSection() {
   return (
     <section
       aria-labelledby='faq-heading'
-      className='mx-auto flex h-fit max-w-304 flex-col gap-12 px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:py-24'
+      className='mx-auto flex max-w-304 flex-col gap-12 px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:px-0 lg:py-24'
     >
       <div className='flex flex-col items-center gap-5 text-center'>
         <h2

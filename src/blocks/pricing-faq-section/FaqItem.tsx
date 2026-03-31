@@ -1,6 +1,6 @@
 import * as Accordion from "@radix-ui/react-accordion";
 
-import { AccordionTrigger, AccordionContent } from "../ui/Accordion";
+import { AccordionTrigger, AccordionContent } from "../../components/ui/Accordion";
 
 import { IconFaqClose } from "./icons/FaqCloseIcon";
 import { IconFaqOpen } from "./icons/FaqOpenIcon";

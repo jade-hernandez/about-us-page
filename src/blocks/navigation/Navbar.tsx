@@ -9,11 +9,14 @@ import { NavLogo } from "./icons/NavLogo";
 import { MobileMenu } from "./MobileMenu";
 import { navLinks } from "./navigation";
 
+import { useMediaQuery } from "../../hooks/useMediaQuery";
 import { cn } from "../../utils/utils";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const breakpoint = useMediaQuery();
 
   const pathname = window.location.pathname;
 
@@ -27,55 +30,65 @@ function Navbar() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-[background-color,backdrop-filter,box-shadow] duration-300 md:px-8 lg:px-0",
+        "sticky top-0 z-50 w-full transition-[background-color,backdrop-filter,box-shadow] duration-300",
         isScrolled ? "bg-white/80 shadow-sm backdrop-blur-md" : "bg-transparent"
       )}
     >
       <nav
         role='navigation'
         aria-label='Main navigation'
-        className='mx-auto flex w-full max-w-304 items-center justify-between py-3 lg:gap-24'
+        className='mx-auto flex w-full max-w-[calc(100%-2rem)] items-center justify-between py-4.5 lg:gap-12 lg:py-3 xl:max-w-304 xl:gap-24'
       >
-        <NavLogo />
-        <div className='hidden items-center gap-8 lg:flex lg:pr-51.25'>
-          {navLinks.map(({ href, label }) => (
-            <Link
-              key={href}
-              href={href}
+        <div className='h-8 w-28'>
+          <NavLogo />
+        </div>
+        <div className='flex items-center justify-center gap-24 xl:w-full xl:justify-between'>
+          {breakpoint === "desktop" && (
+            <>
+              <div className='flex items-center gap-8'>
+                {navLinks.map(({ href, label }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    variant='linkGray'
+                    size='lg-link'
+                    aria-current={pathname === href ? "page" : undefined}
+                    className={pathname === href ? "text-neutral-900" : ""}
+                  >
+                    {label}
+                  </Link>
+                ))}
+              </div>
+              <div className='flex items-center gap-4'>
+                <Button
+                  variant='secondary'
+                  size='md'
+                >
+                  Learn more
+                </Button>
+                <Button
+                  variant='primary'
+                  size='md'
+                >
+                  See pricing
+                </Button>
+              </div>
+            </>
+          )}
+          {breakpoint !== "desktop" && (
+            <Button
               variant='linkGray'
-              size='lg-link'
-              aria-current={pathname === href ? "page" : undefined}
-              className={pathname === href ? "text-neutral-900" : ""}
+              size='icon-md'
+              onClick={() => setIsOpen(!isOpen)}
+              aria-controls='mobile-menu'
+              aria-label='Toggle mobile menu'
+              aria-expanded={isOpen}
+              className='size-5 p-0'
             >
-              {label}
-            </Link>
-          ))}
+              <HamburgerIcon />
+            </Button>
+          )}
         </div>
-        <div className='hidden items-center gap-4 lg:flex'>
-          <Button
-            variant='secondary'
-            size='md'
-          >
-            Learn more
-          </Button>
-          <Button
-            variant='primary'
-            size='md'
-          >
-            See pricing
-          </Button>
-        </div>
-        <Button
-          variant='linkGray'
-          size='icon-md'
-          onClick={() => setIsOpen(!isOpen)}
-          aria-controls='mobile-menu'
-          aria-label='Toggle mobile menu'
-          aria-expanded={isOpen}
-          className='w-fit lg:hidden'
-        >
-          <HamburgerIcon />
-        </Button>
         <MobileMenu
           isOpen={isOpen}
           onClose={() => setIsOpen(false)}

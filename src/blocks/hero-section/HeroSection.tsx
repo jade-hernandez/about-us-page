@@ -16,7 +16,7 @@ function HeroSection() {
   return (
     <section
       aria-labelledby='hero-heading'
-      className='mx-auto flex max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-12 py-12 md:gap-8 md:py-16 xl:flex-row xl:px-0 xl:py-24'
+      className='mx-auto flex max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-12 py-12 md:gap-8 md:py-16 xl:flex-row xl:py-24'
     >
       <div className='flex h-fit w-full flex-col justify-start gap-8 align-middle md:gap-16 xl:max-w-122'>
         <div className='flex h-fit w-full flex-col gap-8 md:gap-16'>

@@ -8,7 +8,7 @@ function FaqSection() {
   return (
     <section
       aria-labelledby='faq-heading'
-      className='mx-auto flex max-w-304 flex-col gap-12 px-3 py-12 md:gap-16 md:px-4 md:py-16 lg:px-0 lg:py-24'
+      className='mx-auto flex max-w-[calc(100%-1.5rem)] flex-col items-center justify-center gap-12 py-12 md:max-w-[calc(100%-2rem)] md:gap-16 md:py-16 lg:py-24 xl:max-w-304'
     >
       <div className='flex flex-col items-center gap-5 text-center'>
         <h2
@@ -29,7 +29,7 @@ function FaqSection() {
             isLast={index === faqContentData.length - 1}
           />
         ))}
-        <div className='mt-7 flex h-fit w-full flex-col items-center justify-between gap-4 rounded-lg border border-neutral-200 bg-white p-4 shadow-[0_4px_6px_rgba(0,0,0,0.1),0_2px_4px_rgba(0,0,0,0.06)] md:flex-row md:p-8'>
+        <div className='mt-7 flex h-fit w-full flex-col items-center justify-between gap-4 rounded-lg border border-neutral-200 p-4 shadow-[0_4px_6px_rgba(0,0,0,0.1),0_2px_4px_rgba(0,0,0,0.06)] md:flex-row md:p-8'>
           <div className='flex flex-col gap-2'>
             <h3 className='text-xl font-semibold text-pretty text-neutral-900'>
               Can&apos;t find the answer you&apos;re looking for?

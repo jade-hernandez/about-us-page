@@ -1,5 +1,5 @@
-# Pricing Page Section
+# Features Page Section
 
 ## Live site URL
 
-[https://pricing-page-lyart.vercel.app/](https://pricing-page-lyart.vercel.app/)
+[https://features-page-five.vercel.app/](https://features-page-five.vercel.app/)

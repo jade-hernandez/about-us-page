@@ -58,7 +58,7 @@ function ImageWithPlaceholder({
           alt={altText}
           onLoad={() => setIsLoaded(true)}
           onError={() => setIsLoaded(true)}
-          className='size-fit md:h-98.5 lg:max-w-148'
+          className='size-fit'
         />
       </picture>
     </div>

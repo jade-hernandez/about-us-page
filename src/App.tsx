@@ -1,11 +1,6 @@
 import { Navbar } from "./blocks/navigation/Navbar";
 
 import { HeroSection } from "./blocks/hero-section/HeroSection";
-import { FeaturesSection } from "./blocks/features-section/FeaturesSection";
-import { DesignerFeatures } from "./blocks/designer-features-section/DesignerFeatures";
-import { ConvenienceFeatures } from "./blocks/convenience-features-section/ConvenienceFeatures";
-import { TestimonialsSection } from "./blocks/testimonials-section/TestimonialsSection";
-import { FaqSection } from "./blocks/pricing-faq-section/FaqSection";
 import { ContactSection } from "./blocks/contact-section/ContactSection";
 
 import { Footer } from "./blocks/footer/Footer";
@@ -20,11 +15,6 @@ function App() {
       <div className='mt-4 flex w-full flex-col rounded-md bg-white'>
         <main className='flex flex-col'>
           <HeroSection />
-          <FeaturesSection />
-          <DesignerFeatures />
-          <ConvenienceFeatures />
-          <TestimonialsSection />
-          <FaqSection />
           <ContactSection />
         </main>
         <Footer />

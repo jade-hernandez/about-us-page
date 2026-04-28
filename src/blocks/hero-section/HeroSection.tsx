@@ -14,18 +14,20 @@ function HeroSection() {
   return (
     <section
       aria-labelledby='hero-heading'
-      className='mx-auto flex max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-12 py-12 md:gap-8 md:py-16 xl:flex-row xl:py-24'
+      className='mx-auto flex max-w-[calc(100%-1.5rem)] flex-col items-center justify-center gap-12 py-12 md:max-w-[calc(100%-2rem)] md:gap-8 md:py-16 xl:flex-row xl:py-24'
     >
-      <div className='flex h-fit w-full flex-col justify-start gap-8 align-middle md:gap-16 xl:max-w-122'>
-        <div className='flex h-fit w-full flex-col gap-8 md:gap-5'>
+      <div className='flex h-fit w-full flex-col justify-start gap-8 md:gap-16 xl:max-w-122'>
+        <div className='flex h-fit w-full flex-col gap-4 md:gap-6'>
           <h1
             id='hero-heading'
-            className='md:text-5 h-fit w-full text-4xl font-semibold text-neutral-900 md:text-5xl xl:text-6xl'
+            className='h-fit w-full text-4xl font-semibold text-neutral-900 md:text-5xl xl:text-6xl'
           >
-            From a tiny desk to the entire world
+            {breakpoint === "desktop"
+              ? "From a tiny desk to the entire world"
+              : "Well crafted abstract gradient"}
           </h1>
 
-          <p className='h-fit w-full text-xl text-neutral-700'>
+          <p className='h-fit w-full text-lg text-neutral-600 md:text-xl'>
             As a lean, passionate team, we've made something that most would think is impossible -
             premium abstract images for free and for all.
           </p>
@@ -34,20 +36,18 @@ function HeroSection() {
           <Button
             variant='secondary'
             size={breakpoint !== "mobile" ? "2xl" : "xl"}
-            className='order-2 md:order-1'
           >
-            Learn more
+            Features
           </Button>
           <Button
             variant='primary'
             size={breakpoint !== "mobile" ? "2xl" : "xl"}
-            className='order-1 md:order-2'
           >
             See pricing
           </Button>
         </div>
       </div>
-      <div className='lg:max-w-174'>
+      <div className='xl:max-w-174'>
         <ImageWithPlaceholder
           altText='An abstract representation of creativity and design'
           images={{

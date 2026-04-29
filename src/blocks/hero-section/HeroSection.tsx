@@ -47,7 +47,7 @@ function HeroSection() {
           </Button>
         </div>
       </div>
-      <div className='xl:max-w-174'>
+      <div className='md:max-w-180 xl:max-w-174'>
         <ImageWithPlaceholder
           altText='An abstract representation of creativity and design'
           images={{

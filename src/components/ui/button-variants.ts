@@ -46,18 +46,18 @@ export const buttonVariants = cva(
         ]
       },
       size: {
-        md: "gap-1.5 rounded px-4 py-[10px] text-base",
-        lg: "gap-[6px] rounded px-5 py-3 text-base",
-        xl: "gap-[6px] rounded px-[22px] py-3 text-base",
-        "2xl": "gap-[10px] rounded px-[26px] py-4 text-lg",
+        md: "gap-1.5 rounded px-4 py-2.5 text-base",
+        lg: "gap-1.5 rounded px-5 py-3 text-base",
+        xl: "gap-1.5 rounded px-5 py-3 text-base",
+        "2xl": "gap-2.5 rounded px-6 py-4 text-lg",
         "icon-sm": "rounded p-1.5",
         "icon-md": "rounded p-2",
         "icon-lg": "rounded p-2.5",
-        "icon-2xl": "gap-[10px] rounded p-4 text-lg",
+        "icon-2xl": "gap-2.5 rounded p-4 text-lg",
         "md-link": "gap-1 rounded text-sm",
-        "lg-link": "gap-[6px] rounded text-base",
-        "xl-link": "gap-[6px] rounded text-base",
-        "2xl-link": "gap-[10px] rounded text-lg"
+        "lg-link": "gap-1.5 rounded text-base",
+        "xl-link": "gap-1.5 rounded text-base",
+        "2xl-link": "gap-1.5 rounded text-lg"
       }
     },
     defaultVariants: {

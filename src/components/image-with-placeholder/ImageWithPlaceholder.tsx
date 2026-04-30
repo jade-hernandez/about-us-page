@@ -26,7 +26,7 @@ function ImageWithPlaceholder({
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
-    <div className='overflow-hidden rounded-2xl shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]'>
+    <div className='shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-2px_rgba(0,0,0,0.05)]'>
       {!isLoaded && (
         <picture style={{ display: !isLoaded ? "block" : "none" }}>
           <source

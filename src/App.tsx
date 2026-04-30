@@ -1,6 +1,7 @@
 import { Navbar } from "./blocks/navigation/Navbar";
 
 import { HeroSection } from "./blocks/hero-section/HeroSection";
+import { StatisticsSection } from "./blocks/statistics-section/StatisticsSection";
 import { ContactSection } from "./blocks/contact-section/ContactSection";
 
 import { Footer } from "./blocks/footer/Footer";
@@ -15,6 +16,7 @@ function App() {
       <div className='mt-4 flex w-full flex-col rounded-md bg-white'>
         <main className='flex flex-col'>
           <HeroSection />
+          <StatisticsSection />
           <ContactSection />
         </main>
         <Footer />

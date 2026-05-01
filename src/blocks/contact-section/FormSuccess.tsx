@@ -2,10 +2,10 @@ import { RiCheckFill } from "react-icons/ri";
 
 import { Button } from "../../components/ui/Button";
 
-interface FormSuccessProps {
+type FormSuccessProps = {
   onReset: () => void;
   ref?: React.Ref<HTMLDivElement>;
-}
+};
 
 function FormSuccess({ onReset, ref }: FormSuccessProps) {
   return (

@@ -1,7 +1,7 @@
-export interface BadgeProps {
+export type BadgeProps = {
   label: string;
   classNames: string;
-}
+};
 
 function Badge({ label, classNames }: Readonly<BadgeProps>) {
   return (

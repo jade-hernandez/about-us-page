@@ -1,6 +1,6 @@
 import { cn } from "../../utils/utils";
 
-interface TextareaProps {
+type TextareaProps = {
   name: string;
   label: string;
   value: string;
@@ -10,7 +10,7 @@ interface TextareaProps {
   hasError?: boolean;
   errorMessage?: string;
   isDisabled?: boolean;
-}
+};
 
 function Textarea({
   name,

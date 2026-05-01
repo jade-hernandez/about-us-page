@@ -5,7 +5,7 @@ function TeamSection() {
   return (
     <section
       aria-labelledby='team-heading'
-      className='mx-auto flex max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-12 py-12 md:max-w-[calc(100%-2rem)] md:gap-16 md:py-16 lg:py-24 xl:max-w-304'
+      className='mx-auto flex max-w-[calc(100%-2rem)] flex-col items-center justify-center gap-12 py-12 md:gap-16 md:py-16 lg:py-24 xl:max-w-304'
     >
       <div className='flex flex-col gap-5 text-center'>
         <div className='flex flex-col gap-3'>

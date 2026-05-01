@@ -12,10 +12,10 @@ import { navLinks } from "./navigation";
 import { useFocusTrap } from "../../hooks/useFocusTrap";
 import { cn } from "../../utils/utils";
 
-interface MobileMenuProps {
+type MobileMenuProps = {
   isOpen: boolean;
   onClose: () => void;
-}
+};
 
 function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const menuRef = useRef<HTMLDivElement>(null);

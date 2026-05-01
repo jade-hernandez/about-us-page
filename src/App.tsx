@@ -2,6 +2,7 @@ import { Navbar } from "./blocks/navigation/Navbar";
 
 import { HeroSection } from "./blocks/hero-section/HeroSection";
 import { StatisticsSection } from "./blocks/statistics-section/StatisticsSection";
+import { TeamSection } from "./blocks/team-section/TeamSection";
 import { ContactSection } from "./blocks/contact-section/ContactSection";
 
 import { Footer } from "./blocks/footer/Footer";
@@ -17,6 +18,7 @@ function App() {
         <main className='flex flex-col'>
           <HeroSection />
           <StatisticsSection />
+          <TeamSection />
           <ContactSection />
         </main>
         <Footer />

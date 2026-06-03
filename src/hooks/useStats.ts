@@ -18,7 +18,7 @@ type UseStatsReturn = {
   refetch: () => Promise<void>;
 };
 
-export const useStats = (): UseStatsReturn => {
+function useStats(): UseStatsReturn {
   const [data, setData] = useState<StatsResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -47,4 +47,6 @@ export const useStats = (): UseStatsReturn => {
   }, []);
 
   return { data, loading, error, refetch: fetchData };
-};
+}
+
+export { useStats };

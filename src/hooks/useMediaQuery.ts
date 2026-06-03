@@ -8,7 +8,7 @@ function getBreakpoint(width: number): Breakpoint {
   return "desktop";
 }
 
-export function useMediaQuery(): Breakpoint {
+function useMediaQuery(): Breakpoint {
   const [breakpoint, setBreakpoint] = useState<Breakpoint>(getBreakpoint(window.innerWidth));
 
   useEffect(() => {
@@ -33,3 +33,5 @@ export function useMediaQuery(): Breakpoint {
 
   return breakpoint;
 }
+
+export { useMediaQuery };

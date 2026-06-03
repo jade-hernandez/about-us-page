@@ -15,12 +15,12 @@ import {
   STATISTICS_TABLET_BLUR
 } from "./images/blur-data";
 
-type FeatureCardProps = {
+type MetricsCardProps = {
   value: number;
   metric: string;
 };
 
-function MetricsCard({ value, metric }: FeatureCardProps) {
+function MetricsCard({ value, metric }: MetricsCardProps) {
   const formattedValue = value.toLocaleString();
   const formattedMetric = () => {
     // This below is a special case where the API returns a different naming than what's expected by the final design
@@ -75,7 +75,7 @@ function StatisticsSection() {
           }}
         />
 
-        <div className='max-w-[calc(100% - 96px)] flex w-full flex-col gap-6 md:gap-8'>
+        <div className='flex w-full max-w-[calc(100%-96px)] flex-col gap-6 md:gap-8'>
           <p className='text-left text-lg text-neutral-600'>Our mission, in numbers</p>
           {error && (
             <div

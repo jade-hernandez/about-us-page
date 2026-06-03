@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export function useFocusTrap(ref: React.RefObject<HTMLElement>, isActive: boolean) {
+function useFocusTrap(ref: React.RefObject<HTMLElement>, isActive: boolean) {
   useEffect(() => {
     if (!isActive || !ref.current) return;
 
@@ -40,3 +40,5 @@ export function useFocusTrap(ref: React.RefObject<HTMLElement>, isActive: boolea
     };
   }, [isActive, ref]);
 }
+
+export { useFocusTrap };
